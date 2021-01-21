@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+                   <div id="custom-search-input">
+                                    <div class="input-group col-md-12" style="text-align: center">
+                                        <input type="text" class="search-query form-control" placeholder="Search With BOOKNAME"  name="Name" [(ngModel)]="Name"/>
+                                        <span class="input-group-btn">
+                                            <button class="btn btn-danger" type="button" (click)="getbkbynm()">
+                                                <span class=" glyphicon glyphicon-search"></span>
+                                            </button>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+<div class="container">
+<div class="container">
+  <table class="table table-bordered">
+    <thead>
+      <tr >
+        <th>BOOKID</th>
+        <th>NAME</th>
+        <th>AUTHOR</th>
+        <th>PUBLICATION</th>
+        <th>PRICE</th>
+        <th>DELETEBOOk</th>
+        <th>UPDATEBOOk</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let book of newbook"> 
+        <td>{{book.BookId}}</td>
+        <td>{{book.Name}}</td>
+        <td>{{book.Author}}</td>
+        <td>{{book.Publication}}</td>
+        <td>{{book.Price}}</td>
+        <td class="text-center"><button class="btn btn-danger btn-xs" (click)="delbook(book.BookId)"><span class="glyphicon glyphicon-remove"></span> DeleteBook</button></td>
+        <td class="text-center"><button class="btn-success" (click)="upbook(book)"><span class="glyphicon glyphicon-remove"></span> UpdateBook</button></td>
+    </tbody>
+  </table>
+</div>
+
+
+
